@@ -6,5 +6,14 @@ This program aims to be a graphical front for ShellMS on Android. Built for macO
 
 Requires that ShellMS is installed on your android device. Grab it via F-Droid or from source here: https://github.com/try2codesecure/ShellMS
 
+##Prerequisites##
+- Have adb configured
+- Have ShellMS installed on your android device
+
+##Compilation##
+1. Clone source
+2. Open project in Xcode
+3. Compile/run
+
 
 Licensed under the GPL v3, refer to LICENSE.txt for more information.
