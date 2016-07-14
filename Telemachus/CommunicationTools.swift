@@ -30,11 +30,19 @@ class CommunicationTools {
         print("Exiting task")
     }
 
+    
+    // Sometimes there are extra charcters in there that we don't want
+    // Regex seems clunky in swift at the moment. I should correct this later
     static func validateNumber(numberField: String) -> String {
+        var modifiedNumber = numberField.stringByReplacingOccurrencesOfString(" ", withString: "")
+        modifiedNumber = modifiedNumber.stringByReplacingOccurrencesOfString("-", withString: "")
+        modifiedNumber = modifiedNumber.stringByReplacingOccurrencesOfString("(", withString: "")
+        modifiedNumber = modifiedNumber.stringByReplacingOccurrencesOfString(")", withString: "")
 
-        return numberField
+        return modifiedNumber
     }
     
+    // Sanitize our message, primarily so that double quotes don't terminate the string early
     static func sanitizeMessage(messageField: String) -> String {
         let modifiedString = messageField.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
         
@@ -43,3 +51,4 @@ class CommunicationTools {
     }
     
 }
+

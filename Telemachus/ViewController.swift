@@ -22,7 +22,7 @@ class ViewController: NSViewController {
         messageField.placeholderString = "Write a message"
         
         for contact in contacts{
-            print("\((contact.phoneNumbers.first?.value as? CNPhoneNumber)?.stringValue) - \(contact.givenName)")
+            print("\((contact.phoneNumbers.first?.value as? CNPhoneNumber)?.stringValue) - \(CNContactFormatter.stringFromContact(contact, style: .FullName))")
         }
     }
 
@@ -68,6 +68,9 @@ class ViewController: NSViewController {
             
             do {
                 let containerResults = try contactStore.unifiedContactsMatchingPredicate(fetchPredicate, keysToFetch: keysToFetch)
+                
+                //print("\(containerResults)")
+                
                 results.appendContentsOf(containerResults)
             } catch {
                 print("Error fetching results for container")
