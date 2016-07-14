@@ -4,4 +4,3 @@
 - GUI feedback for successfully sent message
 - Check phone number format
 - Add keyboard shortcuts and proper menus
-- Clear textfields after sent message

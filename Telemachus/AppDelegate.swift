@@ -19,5 +19,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    
+    // Some functions to take care of menu items
+    // Not yet implemented because I don't quite understand some components
+    @IBAction func clearFieldsMenuItem(sender: NSMenuItem) {
+        
+    }
+    
+    @IBAction func sendMessageMenuItem(sender: NSMenuItem) {
+        
+    }
+    
+    // This one's good to go though!
+    @IBAction func viewOnGithub(sender: NSMenuItem) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "https://github.com/jacquesCedric/Telemachus")!)
+    }
 }
 
