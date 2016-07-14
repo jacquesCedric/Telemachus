@@ -3,7 +3,7 @@
 //  Telemachus
 //
 //  Created by Jacob Gaffney on 14/07/2016.
-//  Copyright © 2016 Jacob Gaffney. All rights reserved.
+//  Licensed under the GPL v3
 //
 
 import Foundation
@@ -12,15 +12,14 @@ class CommunicationTools {
     class func smsCommand(numberField: String, messageField: String) {
         // Little bit of logging
         print("Attempting to send message")
-        //print("number is \(numberField) and message is \(messageField)")
         
-        // Gotta wrap our message in quotes so it can be used as an argument
-        let sentence = "\"" + messageField + "\""
+        let number = validateNumber(numberField)
+        let message = sanitizeMessage(messageField)
         
         // Setup our NSTask to use adb
         let task = NSTask()
         task.launchPath = "/usr/local/Cellar/android-platform-tools/23.0.1/bin/adb" // Should be smarter
-        task.arguments = ["shell", "am", "startservice", "--user", "0", "-n", "com.android.shellms/.sendSMS", "-e", "contact", numberField, "-e", "msg", sentence]
+        task.arguments = ["shell", "am", "startservice", "--user", "0", "-n", "com.android.shellms/.sendSMS", "-e", "contact", number, "-e", "msg", message]
         let pipe = NSPipe()
         task.standardOutput = pipe
         task.standardError = pipe
@@ -28,6 +27,16 @@ class CommunicationTools {
         task.waitUntilExit()
     }
 
+    static func validateNumber(numberField: String) -> String {
+        
+        return numberField
+    }
     
+    static func sanitizeMessage(messageField: String) -> String {
+        let modifiedString = messageField.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+        
+        // Gotta wrap our message in quotes so it can be used as an argument
+        return "\"" + modifiedString + "\""
+    }
     
 }

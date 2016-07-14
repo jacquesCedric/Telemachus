@@ -29,7 +29,8 @@ class ViewController: NSViewController {
     
     @IBAction func sendMessage(sender: AnyObject) {
         CommunicationTools.smsCommand(numberField.stringValue, messageField: messageField.stringValue)
-        
+        numberField.stringValue = ""
+        messageField.stringValue = ""
     }
 
 }
