@@ -19,10 +19,13 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         numberField.placeholderString = "Phone Number"
-        messageField.placeholderString = "Write a message"
+        messageField.placeholderString = "Write a Message..."
         
         for contact in contacts{
-            print("\((contact.phoneNumbers.first?.value as? CNPhoneNumber)?.stringValue) - \(CNContactFormatter.stringFromContact(contact, style: .FullName))")
+            if contact.phoneNumbers.first?.value != nil {
+                let fullname = CNContactFormatter.stringFromContact(contact, style: .FullName)
+                print("\((contact.phoneNumbers.first?.value as? CNPhoneNumber)!.stringValue) - \(fullname!)")
+            }
         }
     }
 
