@@ -27,8 +27,11 @@ class ViewController: NSViewController {
     }
 
     
-    @IBAction func sendMessage(sender: AnyObject) {
-        CommunicationTools.smsCommand(numberField.stringValue, messageField: messageField.stringValue)
+    
+    @IBAction func sendMessage(sender: NSButton) {
+        CommunicationTools.smsCommand(numberField.stringValue, messageTextField: messageField.stringValue)
+        
+        print("clearing inputs")
         numberField.stringValue = ""
         messageField.stringValue = ""
     }

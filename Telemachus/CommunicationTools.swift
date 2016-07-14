@@ -9,12 +9,12 @@
 import Foundation
 
 class CommunicationTools {
-    class func smsCommand(numberField: String, messageField: String) {
+    class func smsCommand(numberTextField: String, messageTextField: String) {
         // Little bit of logging
         print("Attempting to send message")
         
-        let number = validateNumber(numberField)
-        let message = sanitizeMessage(messageField)
+        let number = validateNumber(numberTextField)
+        let message = sanitizeMessage(messageTextField)
         
         // Setup our NSTask to use adb
         let task = NSTask()
@@ -23,12 +23,15 @@ class CommunicationTools {
         let pipe = NSPipe()
         task.standardOutput = pipe
         task.standardError = pipe
+        
+        print("Launching task")
         task.launch()
         task.waitUntilExit()
+        print("Exiting task")
     }
 
     static func validateNumber(numberField: String) -> String {
-        
+
         return numberField
     }
     
