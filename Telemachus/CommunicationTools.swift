@@ -18,7 +18,7 @@ class CommunicationTools {
         
         // Setup our NSTask to use adb
         let task = NSTask()
-        task.launchPath = "/usr/local/Cellar/android-platform-tools/23.0.1/bin/adb" // Should be smarter
+        task.launchPath = "/usr/local/bin/adb" // This could be determined with "type -p adb" using NSTask
         task.arguments = ["shell", "am", "startservice", "--user", "0", "-n", "com.android.shellms/.sendSMS", "-e", "contact", number, "-e", "msg", message]
         let pipe = NSPipe()
         task.standardOutput = pipe
