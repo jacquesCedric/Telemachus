@@ -1,6 +1,5 @@
 ##TODO##
-- Add contacts picker
 - Add autoconfig for wireless adb
 - GUI feedback for successfully sent message
-- Check phone number format
+- Check phone number format (half-implemented)
 - Add keyboard shortcuts and proper menus

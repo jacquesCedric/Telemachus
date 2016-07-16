@@ -17,20 +17,20 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Uses numbers from contacts to send messages</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Created by Jacob Gaffney, 2016. Licenced under GPLv3</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Uses numbers from contacts to send messages</string>
 </dict>
 </plist>

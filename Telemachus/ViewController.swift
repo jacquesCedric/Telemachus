@@ -17,8 +17,15 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Sort out the table
         tableView.setDelegate(self)
         tableView.setDataSource(self)
+        tableView.target = self
+        tableView.action = #selector(ViewController.tableViewClick(_:))
+        
+        // Set row height
+        self.tableView.rowHeight = 34.0
         
         // Make sure our textfields' purpose is clear to the user
         numberField.placeholderString = "Phone Number"
@@ -26,9 +33,9 @@ class ViewController: NSViewController {
         
         //let example = sortContacts(returnContacts())
         tableView.reloadData()
-        
     }
-
+    
+    
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
@@ -46,6 +53,12 @@ class ViewController: NSViewController {
         clearFields()
     }
     
+    
+    // Assign contacts number to number field
+    func tableViewClick(sender: AnyObject) {
+        let item = sortContacts(returnContacts())[tableView.selectedRow].1
+        numberField.stringValue = item
+    }
     
     // Returns a dictionary of relevant contacts RETURNS AS DICTIONARY
     func returnContacts() -> [String: String] {
@@ -65,24 +78,13 @@ class ViewController: NSViewController {
             }
         }
         
-        //namesAndNumbers = sortContacts(namesAndNumbers)
-        
         return namesAndNumbers
     }
     
     // Capable of sorting our contacts alphabetically RETURNS AS ARRAY
     func sortContacts(namesAndNumbers: [String: String]) -> [(String, String)]{
-    //func sortContacts(namesAndNumbers: [String: String]) -> [String: String]{
         // Create a dictionary that's sorted alphabetically by key and includes values
         let sortedStrings = namesAndNumbers.sort { $0.0 < $1.0}
-        //var sortedNamesAndNumbers = [String: String]()
-        // Just a test
-        /*for (name, number) in sortedStrings {
-            //sortedNamesAndNumbers[name] = number
-            print("\(name) - \(number)")
-        }*/
-        
-        //return sortedNamesAndNumbers
         return sortedStrings
     }
     
@@ -121,7 +123,6 @@ class ViewController: NSViewController {
     }()
     
     
-    
     // Clean up fields
     func clearFields() {
         numberField.stringValue = ""
@@ -150,6 +151,10 @@ extension ViewController : NSTableViewDelegate {
         if tableColumn == tableView.tableColumns[0] {
             text = item.0
             cellIdentifier = "NameCellID"
+        }
+        if tableColumn == tableView.tableColumns[1] {
+            text = item.1
+            cellIdentifier = "NumberCellID"
         }
         
         // Create our cell view
