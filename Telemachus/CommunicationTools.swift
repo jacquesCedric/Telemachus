@@ -32,7 +32,7 @@ class CommunicationTools {
 
     
     // Sometimes there are extra charcters in there that we don't want
-    // Regex seems clunky in swift at the moment. I should correct this later
+    // Regex seems clunky in Swift at the moment. I should correct this later
     static func validateNumber(numberField: String) -> String {
         var modifiedNumber = numberField.stringByReplacingOccurrencesOfString(" ", withString: "")
         modifiedNumber = modifiedNumber.stringByReplacingOccurrencesOfString("-", withString: "")
