@@ -117,22 +117,23 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="550" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8y-p1-E9s">
-                                <rect key="frame" x="302" y="-1" width="251" height="155"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ect-lL-zN0">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-vj-gYR">
+                                <rect key="frame" x="302" y="29" width="251" height="131"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5rM-pY-HYe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHa-oU-vLk">
-                                <rect key="frame" x="302" y="-5" width="248" height="32"/>
-                                <buttonCell key="cell" type="bevel" title="Send" bezelStyle="rounded" alignment="right" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Jq3-KL-oTf">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" accelerator="YES"/>
-                                    <font key="font" metaFont="systemBold"/>
+                                <rect key="frame" x="302" y="-3" width="249" height="32"/>
+                                <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Jq3-KL-oTf">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="sendMessage:" target="XfG-lQ-9wD" id="Bkl-es-wpR"/>
+                                    <action selector="sendMessage:" target="XfG-lQ-9wD" id="KF5-Au-hey"/>
+                                    <outlet property="nextKeyView" destination="eWS-D5-VGB" id="0pH-tA-GsN"/>
                                 </connections>
                             </button>
                             <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4da-PJ-9XC">
@@ -141,14 +142,6 @@ DQ
                                     <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zk-7c-HVc">
-                                <rect key="frame" x="310" y="35" width="234" height="113"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" id="Pkm-B3-kud">
-                                    <font key="font" metaFont="system" size="14"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-9H-AUZ">
@@ -242,6 +235,9 @@ DQ
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="4da-PJ-9XC" id="FOQ-WU-0q2"/>
+                                </connections>
                             </scrollView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jg7-Vp-l33">
                                 <rect key="frame" x="309" y="162" width="38" height="26"/>
@@ -251,18 +247,47 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-d9-dIO">
-                                <rect key="frame" x="303" y="23" width="247" height="5"/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
-                            </box>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-xp-RMt">
+                                <rect key="frame" x="307" y="35" width="239" height="119"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="rzO-qn-dW8">
+                                    <rect key="frame" x="0.0" y="0.0" width="239" height="119"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" id="zed-A7-gaa">
+                                            <rect key="frame" x="0.0" y="0.0" width="239" height="119"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="239" height="119"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="239" height="119"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <connections>
+                                                <outlet property="nextKeyView" destination="KHa-oU-vLk" id="u1b-dF-GoO"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="hg3-6U-xs4">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="WpP-S9-GkP">
+                                    <rect key="frame" x="223" y="0.0" width="16" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <connections>
+                                    <outlet property="nextKeyView" destination="KHa-oU-vLk" id="wVj-tx-Xjg"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="messageField" destination="6zk-7c-HVc" id="p76-dA-IBD"/>
+                        <outlet property="messageField" destination="zed-A7-gaa" id="ZFV-Gt-49q"/>
                         <outlet property="number" destination="4da-PJ-9XC" id="bIl-8u-BCz"/>
                         <outlet property="numberField" destination="4da-PJ-9XC" id="inU-Q3-eil"/>
+                        <outlet property="sendButton" destination="KHa-oU-vLk" id="FS1-A6-6IY"/>
                         <outlet property="sendMessage" destination="KHa-oU-vLk" id="M61-Wj-gTR"/>
                         <outlet property="tableView" destination="eWS-D5-VGB" id="Rom-XP-2AT"/>
                     </connections>

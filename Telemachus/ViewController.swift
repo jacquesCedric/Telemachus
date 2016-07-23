@@ -12,7 +12,7 @@ import Contacts
 class ViewController: NSViewController {
 
     @IBOutlet var numberField: NSTextField!
-    @IBOutlet var messageField: NSTextField!
+    @IBOutlet var messageField: NSTextView!
     @IBOutlet weak var tableView: NSTableView!
     
     override func viewDidLoad() {
@@ -29,7 +29,8 @@ class ViewController: NSViewController {
         
         // Make sure our textfields' purpose is clear to the user
         numberField.placeholderString = "Phone Number"
-        messageField.placeholderString = "Write a Message..."
+        //messageField.placeholderString = "Write a Message..."
+        messageField.font = NSFont(name: "Helvetica Neue", size: 13)
         
         //let example = sortContacts(returnContacts())
         tableView.reloadData()
@@ -42,11 +43,10 @@ class ViewController: NSViewController {
         }
     }
 
-    
     // What happens when you click the send button
     @IBAction func sendMessage(sender: NSButton) {
         // Send our SMS
-        CommunicationTools.smsCommand(numberField.stringValue, messageTextField: messageField.stringValue)
+        CommunicationTools.smsCommand(numberField.stringValue, messageTextField: (messageField.textStorage as NSAttributedString!).string)
         
         // Clean up the form
         print("clearing inputs")
@@ -68,7 +68,7 @@ class ViewController: NSViewController {
     // Clean up fields
     func clearFields() {
         numberField.stringValue = ""
-        messageField.stringValue = ""
+        messageField.textStorage!.mutableString.setString("")
     }
 }
 
