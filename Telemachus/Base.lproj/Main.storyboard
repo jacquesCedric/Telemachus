@@ -53,7 +53,7 @@
 DQ
 </string>
                                             <connections>
-                                                <action selector="sendMessageMenuItem:" target="Voe-Tx-rLC" id="9qb-FO-CaK"/>
+                                                <action selector="sendMessage:" target="Ady-hI-5gd" id="hJo-Ll-MvZ"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -117,18 +117,26 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="550" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHa-oU-vLk">
-                                <rect key="frame" x="306" y="6" width="242" height="32"/>
-                                <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Jq3-KL-oTf">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" accelerator="YES"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8y-p1-E9s">
+                                <rect key="frame" x="302" y="-1" width="251" height="155"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ect-lL-zN0">
                                     <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHa-oU-vLk">
+                                <rect key="frame" x="302" y="-5" width="248" height="32"/>
+                                <buttonCell key="cell" type="bevel" title="Send" bezelStyle="rounded" alignment="right" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Jq3-KL-oTf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES" accelerator="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="sendMessage:" target="XfG-lQ-9wD" id="Bkl-es-wpR"/>
                                 </connections>
                             </button>
                             <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4da-PJ-9XC">
-                                <rect key="frame" x="310" y="154" width="234" height="34"/>
+                                <rect key="frame" x="351" y="154" width="193" height="34"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="right" usesSingleLineMode="YES" id="Cgx-qn-Hxl">
                                     <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -136,9 +144,9 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zk-7c-HVc">
-                                <rect key="frame" x="312" y="40" width="230" height="114"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="Pkm-B3-kud">
-                                    <font key="font" metaFont="system"/>
+                                <rect key="frame" x="310" y="35" width="234" height="113"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" id="Pkm-B3-kud">
+                                    <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -207,9 +215,9 @@ DQ
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-vk-4sN">
-                                                                    <rect key="frame" x="0.0" y="3" width="110" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="3.0000000000000036" width="110" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="Table View Cell" id="g3P-m3-SEI">
-                                                                        <font key="font" metaFont="system"/>
+                                                                        <font key="font" metaFont="system" size="12"/>
                                                                         <color key="textColor" red="0.59002781413612571" green="0.59002781413612571" blue="0.59002781413612571" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -227,7 +235,7 @@ DQ
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="oeU-SG-0bK">
-                                    <rect key="frame" x="1" y="186" width="302" height="16"/>
+                                    <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="N3A-BH-q5F">
@@ -235,6 +243,20 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jg7-Vp-l33">
+                                <rect key="frame" x="309" y="162" width="38" height="26"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To:" id="63b-sI-ckQ">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-d9-dIO">
+                                <rect key="frame" x="303" y="23" width="247" height="5"/>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <font key="titleFont" metaFont="system"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
