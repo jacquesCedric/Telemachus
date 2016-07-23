@@ -22,6 +22,7 @@ class ViewController: NSViewController {
         tableView.setDelegate(self)
         tableView.setDataSource(self)
         tableView.target = self
+        tableView.action = #selector(ViewController.tableViewClick(_:))
         
         // Set row height
         self.tableView.rowHeight = 34.0
@@ -55,6 +56,11 @@ class ViewController: NSViewController {
     
     // Assign contacts number to number field
     func tableViewSelectionDidChange(notification: NSNotification) {
+        let item = sortContacts(returnContacts())[tableView.selectedRow].1
+        numberField.stringValue = item
+    }
+    
+    func tableViewClick(sender: AnyObject) {
         let item = sortContacts(returnContacts())[tableView.selectedRow].1
         numberField.stringValue = item
     }
