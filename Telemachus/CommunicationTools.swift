@@ -44,8 +44,9 @@ class CommunicationTools {
     
     // Sanitize our message, primarily so that double quotes don't terminate the string early
     static func sanitizeMessage(messageField: String) -> String {
+        // This helps us with tricky symbols
         let modifiedString = messageField.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
-        
+
         // Gotta wrap our message in quotes so it can be used as an argument
         return "\"" + modifiedString + "\""
     }

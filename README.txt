@@ -16,3 +16,4 @@ Requires that ShellMS is installed on your android device. Grab it via F-Droid o
 3. Compile/run
 
 Licensed under the GPL v3, refer to LICENSE.txt for more information.
+Built with Xcode 7.3.1 on macOS 10.11.4

@@ -53,6 +53,21 @@ class ViewController: NSViewController {
         clearFields()
     }
     
+    // This brings up the Emoji & Symbols window, had to trigger it via simulated keyboard shortcut
+    @IBAction func showEmojiMenu(sender: NSButton) {
+        // Setup a custom CGEventFlags Item with value of .MaskControl and .MaskCommand
+        let commandControlMask = (CGEventFlags.MaskCommand.rawValue | CGEventFlags.MaskControl.rawValue)
+        let commandControlMaskFlags = CGEventFlags(rawValue: commandControlMask)!
+        
+        // Press Space key once
+        let space = CGEventSourceCreate(.HIDSystemState)
+        let keyDown = CGEventCreateKeyboardEvent(space, 49 as CGKeyCode, true)
+        CGEventSetFlags(keyDown, commandControlMaskFlags)
+        CGEventPost(.CGHIDEventTap, keyDown)
+        let keyUp = CGEventCreateKeyboardEvent(space, 49 as CGKeyCode, false)
+        CGEventSetFlags(keyUp, commandControlMaskFlags)
+        CGEventPost(.CGHIDEventTap, keyUp)
+    }
     
     // Assign contacts number to number field
     func tableViewSelectionDidChange(notification: NSNotification) {

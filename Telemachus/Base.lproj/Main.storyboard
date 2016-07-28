@@ -59,6 +59,15 @@ DQ
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Edit" id="BLj-5O-QNt" userLabel="Edit">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" id="KVb-Ad-Qia">
+                                    <items>
+                                        <menuItem title="Copy" keyEquivalent="c" id="TPZ-r5-sp1" userLabel="Copy"/>
+                                        <menuItem title="Paste" keyEquivalent="v" id="gbT-0d-DfD" userLabel="Paste"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="View " id="1pF-bh-v16">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View " id="4o4-0S-pHc">
@@ -119,14 +128,14 @@ DQ
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-vj-gYR">
                                 <rect key="frame" x="302" y="29" width="251" height="131"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5rM-pY-HYe">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" refusesFirstResponder="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="" drawsBackground="YES" id="5rM-pY-HYe">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHa-oU-vLk">
-                                <rect key="frame" x="302" y="-3" width="249" height="32"/>
+                                <rect key="frame" x="302" y="-3" width="250" height="32"/>
                                 <buttonCell key="cell" type="push" title="Send" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="Jq3-KL-oTf">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -140,7 +149,7 @@ DQ
                                 <rect key="frame" x="351" y="154" width="193" height="34"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="right" usesSingleLineMode="YES" id="Cgx-qn-Hxl">
                                     <font key="font" metaFont="system" size="18"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -210,7 +219,7 @@ DQ
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UgH-vk-4sN">
                                                                     <rect key="frame" x="0.0" y="3.0000000000000036" width="110" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="right" title="Table View Cell" id="g3P-m3-SEI">
-                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                        <font key="font" metaFont="cellTitle"/>
                                                                         <color key="textColor" red="0.59002781413612571" green="0.59002781413612571" blue="0.59002781413612571" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -273,7 +282,7 @@ DQ
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="WpP-S9-GkP">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="WpP-S9-GkP">
                                     <rect key="frame" x="223" y="0.0" width="16" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -281,9 +290,20 @@ DQ
                                     <outlet property="nextKeyView" destination="KHa-oU-vLk" id="wVj-tx-Xjg"/>
                                 </connections>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" alphaValue="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-A6-nMe">
+                                <rect key="frame" x="522" y="31" width="28" height="23"/>
+                                <buttonCell key="cell" type="bevel" title="☺" bezelStyle="rounded" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="SBN-tU-OYP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="23" name="Arial-BoldMT"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showEmojiMenu:" target="XfG-lQ-9wD" id="InI-nh-7Tf"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="emojiButton" destination="Qhn-A6-nMe" id="rjK-cB-ks4"/>
                         <outlet property="messageField" destination="zed-A7-gaa" id="ZFV-Gt-49q"/>
                         <outlet property="number" destination="4da-PJ-9XC" id="bIl-8u-BCz"/>
                         <outlet property="numberField" destination="4da-PJ-9XC" id="inU-Q3-eil"/>
