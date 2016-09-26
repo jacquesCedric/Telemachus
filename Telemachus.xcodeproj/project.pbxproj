@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44AC0C51D43927300554ABD /* ContactTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AC0C41D43927300554ABD /* ContactTools.swift */; };
 		C462C6CA1D371DB600C61139 /* CommunicationTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C462C6C91D371DB600C61139 /* CommunicationTools.swift */; };
 		C4A101161D361FEC00F8BE9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A101151D361FEC00F8BE9F /* AppDelegate.swift */; };
 		C4A101181D361FEC00F8BE9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A101171D361FEC00F8BE9F /* ViewController.swift */; };
 		C4A1011A1D361FEC00F8BE9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A101191D361FEC00F8BE9F /* Assets.xcassets */; };
 		C4A1011D1D361FEC00F8BE9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A1011B1D361FEC00F8BE9F /* Main.storyboard */; };
-		C4A101281D361FEC00F8BE9F /* TelemachusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A101271D361FEC00F8BE9F /* TelemachusUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C44AC0C41D43927300554ABD /* ContactTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTools.swift; sourceTree = "<group>"; };
 		C462C6C91D371DB600C61139 /* CommunicationTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicationTools.swift; sourceTree = "<group>"; };
 		C4A101121D361FEC00F8BE9F /* Telemachus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telemachus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A101151D361FEC00F8BE9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +35,6 @@
 		C4A1011C1D361FEC00F8BE9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4A1011E1D361FEC00F8BE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A101231D361FEC00F8BE9F /* TelemachusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelemachusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4A101271D361FEC00F8BE9F /* TelemachusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemachusUITests.swift; sourceTree = "<group>"; };
-		C4A101291D361FEC00F8BE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				C4A101141D361FEC00F8BE9F /* Telemachus */,
-				C4A101261D361FEC00F8BE9F /* TelemachusUITests */,
 				C4A101131D361FEC00F8BE9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,17 +81,9 @@
 				C4A1011B1D361FEC00F8BE9F /* Main.storyboard */,
 				C4A1011E1D361FEC00F8BE9F /* Info.plist */,
 				C462C6C91D371DB600C61139 /* CommunicationTools.swift */,
+				C44AC0C41D43927300554ABD /* ContactTools.swift */,
 			);
 			path = Telemachus;
-			sourceTree = "<group>";
-		};
-		C4A101261D361FEC00F8BE9F /* TelemachusUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C4A101271D361FEC00F8BE9F /* TelemachusUITests.swift */,
-				C4A101291D361FEC00F8BE9F /* Info.plist */,
-			);
-			path = TelemachusUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +188,7 @@
 			files = (
 				C4A101181D361FEC00F8BE9F /* ViewController.swift in Sources */,
 				C462C6CA1D371DB600C61139 /* CommunicationTools.swift in Sources */,
+				C44AC0C51D43927300554ABD /* ContactTools.swift in Sources */,
 				C4A101161D361FEC00F8BE9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A101281D361FEC00F8BE9F /* TelemachusUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

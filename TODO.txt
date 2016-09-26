@@ -1,5 +1,13 @@
 ##TODO##
-- Add autoconfig for wireless adb
+- Add autoconfig for wireless adb (consider scrapping, user can implement if they’re savvy)
 - GUI feedback for successfully sent message
 - Check phone number format (half-implemented)
-- Add keyboard shortcuts and proper menus
+- Add keyboard shortcuts and proper menus (half-implemented)
+
+- Version 2.0?
+	- https://github.com/stephencelis/SQLite.swift
+		- https://developer.android.com/reference/android/provider/Telephony.TextBasedSmsColumns.html
+	- Pull sqlite message database or read directly
+		- Conversation threads
+		- Read past SMS and see that new SMS have sent
+		- Time stamps!

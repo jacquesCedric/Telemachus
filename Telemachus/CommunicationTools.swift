@@ -24,6 +24,15 @@ class CommunicationTools {
         task.standardOutput = pipe
         task.standardError = pipe
         
+        // You can use this for something useful later
+        task.terminationHandler = {
+            task in
+            dispatch_async(dispatch_get_main_queue(), {
+                    print("sent sms")
+            })
+        }
+        
+        
         print("Launching task")
         task.launch()
         task.waitUntilExit()
@@ -32,7 +41,7 @@ class CommunicationTools {
 
     
     // Sometimes there are extra charcters in there that we don't want
-    // Regex seems clunky in swift at the moment. I should correct this later
+    // Regex seems clunky in Swift at the moment. I should correct this later
     static func validateNumber(numberField: String) -> String {
         var modifiedNumber = numberField.stringByReplacingOccurrencesOfString(" ", withString: "")
         modifiedNumber = modifiedNumber.stringByReplacingOccurrencesOfString("-", withString: "")
@@ -44,8 +53,9 @@ class CommunicationTools {
     
     // Sanitize our message, primarily so that double quotes don't terminate the string early
     static func sanitizeMessage(messageField: String) -> String {
+        // This helps us with tricky symbols
         let modifiedString = messageField.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
-        
+
         // Gotta wrap our message in quotes so it can be used as an argument
         return "\"" + modifiedString + "\""
     }

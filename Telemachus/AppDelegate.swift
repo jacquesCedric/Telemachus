@@ -21,11 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     // Some functions to take care of menu items
-    // Not yet implemented because I don't quite understand some components
-    @IBAction func clearFieldsMenuItem(sender: NSMenuItem) {
-        
-    }
-    
     @IBAction func sendMessageMenuItem(sender: NSMenuItem) {
         
     }
