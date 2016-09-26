@@ -8,7 +8,7 @@ A macOS application that allows you to send SMS from your mac through an Android
 - Have ShellMS installed on your android device ([ShellMS](https://github.com/try2codesecure/ShellMS))
 
 ## How to use
-1. Download the app from the Releases page ([Releases page](https://github.com/jacquesCedric/Nyxtheia/releases)) or, optionally, compile from source (see below)
+1. Download the app from the Releases page ([Releases page](https://github.com/jacquesCedric/Telemachus-mini/releases)) or, optionally, compile from source (see below)
 2. Unzip and place in Applications folder
 3. The first time it opens it'll ask for permissions to your contacts. 
 ![](https://github.com/jacquesCedric/Telemachus-mini/blob/master/img/permission.png?raw=true)
