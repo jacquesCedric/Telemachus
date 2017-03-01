@@ -1,5 +1,4 @@
-# Telemachus-mini
-![](https://github.com/jacquesCedric/Telemachus-mini/blob/master/Telemachus/Assets.xcassets/AppIcon.appiconset/icon_128x128.png?raw=true)
+# Telemachus-mini ![](https://github.com/jacquesCedric/Telemachus-mini/blob/master/Telemachus/Assets.xcassets/AppIcon.appiconset/icon_32x32-1.png?raw=true)  
 
 A macOS application that allows you to send SMS from your mac through an Android handset. Telemachus bridges your macOS contacts database and your android handset to let you quickly send text messages via your cellular connection.
 
